@@ -11,12 +11,12 @@ public class HolidayFunctionTest {
     public final FnTestingRule testing = FnTestingRule.createDefault();
 
     @Test
-    public void shouldReturnGreeting() {
+    public void shouldReturnHolidays() {
         testing.givenEvent().enqueue();
         testing.thenRun(HolidayFunction.class, "handleRequest");
 
         FnResult result = testing.getOnlyResult();
-        assertEquals("Hello, world!", result.getBodyAsString());
+        assertEquals("10", result.getBodyAsString());
     }
 
 }
