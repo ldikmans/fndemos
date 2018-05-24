@@ -10,9 +10,10 @@ public class HolidayFunctionTest {
     @Rule
     public final FnTestingRule testing = FnTestingRule.createDefault();
 
+   
     @Test
-    public void shouldReturnHolidays() {
-        testing.givenEvent().enqueue();
+    public void shouldReturnWithInput() {
+        testing.givenEvent().withBody("NETHERLANDS").enqueue();
         testing.thenRun(HolidayFunction.class, "handleRequest");
 
         FnResult result = testing.getOnlyResult();
